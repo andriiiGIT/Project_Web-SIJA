@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RUST - Website Game</title>
+<style>
+  * { margin:0; padding:0; box-sizing: border-box; }
+
+  body{
+    font-family: 'Segoe UI', Arial, Roboto, sans-serif;
+    color: #E0E0E0;
+    background: #111215;
+  }
+
+  a{ color:inherit; text-decoration:none; }
+
+  /* ===== INI BAGIAN HEADER ===== */
+ header{
+  height: 800px;
+  position:relative;
+  background:
+    linear-gradient(180deg, rgba(17,18,21,0.85) 0%, rgba(17,18,21,0.55) 40%, rgba(17,18,21,0.95) 100%),
+    url('rust_202409_ttk_heroimage.jpg') center/cover no-repeat;
+  display:flex;
+  flex-direction:column;
+}
+
+  .topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 40px;
+  }
+
+  nav ul{
+    list-style:none;
+    display:flex;
+    gap:28px;
+    font-size:15px;
+    font-weight:600;
+    letter-spacing:1px;
+    text-transform:uppercase;
+  }
+
+  nav ul li a{
+    padding:6px 4px;
+    border-bottom:2px solid transparent;
+    transition:.25s;
+    color: #CCCCCC;
+  }
+  nav ul li a:hover{
+    color: #CE422B;
+    border-bottom:2px solid #CE422B;
+  }
+
+  .banner-content{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:0 20px;
+  }
+
+  .banner-content h1{
+    font-size:64px;
+    letter-spacing:6px;
+    color: #FFFFFF;
+    font-weight: 800;
+    margin-bottom:14px;
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.7);
+  }
+
+  .banner-content p{
+    font-size:16px;
+    color: #E0E0E0;
+    max-width:520px;
+    line-height:1.6;
+    margin-bottom:26px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+  }
+
+  .btn-play{
+    background: #CE422B;
+    color:#fff;
+    padding:14px 38px;
+    border-radius:4px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(206, 66, 43, 0.4);
+    transition:.25s;
+  }
+  .btn-play:hover{ 
+    background: #9E2F1E;
+    transform:translateY(-2px); 
+    box-shadow: 0 6px 20px rgba(206, 66, 43, 0.6);
+  }
+
+  /* ===== INI BAGIAN TENGAH ===== */
+  .body-section{
+    display:flex;
+    gap:24px;
+    padding:50px 40px;
+    max-width:1200px;
+    margin:0 auto;
+  }
+
+  .col-left{
+    flex:1;
+    background: #1A1D24;
+    border:1px solid #2A2F3A;
+    border-radius:6px;
+    padding:30px 24px;
+  }
+
+  .col-left h2{
+    font-size:20px;
+    color: #FFFFFF;
+    margin-bottom:20px;
+    letter-spacing:1px;
+    text-transform: uppercase;
+    border-left: 4px solid #CE422B;
+    padding-left: 10px;
+  }
+
+  .col-left ul{ list-style:none; }
+  .col-left ul li{
+    padding:14px 0;
+    border-bottom:1px solid #2A2F3A;
+    font-size:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+    transition:.2s;
+    color: #E0E0E0;
+  }
+  .col-left ul li:hover{ 
+    color: #CE422B; 
+    padding-left:6px; 
+  }
+  .col-left ul li span{ font-size:12px; color: #8A92A3; }
+
+  .col-right{
+    flex:2;
+    background: #1A1D24;
+    border:1px solid #2A2F3A;
+    border-radius:6px;
+    padding:30px;
+    display:flex;
+    gap:26px;
+  }
+
+  .col-right .text{ flex:1; }
+
+  .col-right h3{
+    font-size:22px;
+    margin-bottom:18px;
+    color:#fff;
+    text-transform: uppercase;
+    border-left: 4px solid #CE422B;
+    padding-left: 10px;
+  }
+
+  .col-right p{
+    font-size:14px;
+    line-height:1.8;
+    color: #CCCCCC;
+    margin-bottom:14px;
+  }
+
+  .game-thumb{
+    width: 496px;
+    height:619px;
+    flex-shrink:0;
+    border-radius:4px;
+    overflow:hidden;
+    border:2px solid #2A2F3A;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  }
+  .game-thumb img{
+    width:100%; height:100%; object-fit:cover;
+  }
+
+  /* ===== INI BAGIAN FOOTER ===== */
+  footer{
+    min-height:200px;
+    background: #0B0C0E;
+    border-top:1px solid #2A2F3A;
+    display:flex;
+    align-items:center;
+    padding:40px 40px;
+    gap:60px;
+  }
+
+  .footer-links{
+    display:flex;
+    gap:80px;
+    flex:1;
+    flex-wrap:wrap;
+  }
+
+  .footer-col h4{
+    font-size:14px;
+    color: #FFFFFF;
+    margin-bottom:16px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+  }
+
+  .footer-col ul{ list-style:none; }
+  .footer-col ul li{ margin-bottom:8px; font-size:14px; color: #A0A5B5; }
+  .footer-col ul li a:hover{ color: #CE422B; }
+
+  @media (max-width: 860px){
+    header{ height:auto; padding-bottom:40px; }
+    .topbar{ flex-direction:column; gap:16px; padding:20px; }
+    nav ul{ flex-wrap:wrap; justify-content:center; gap:14px; }
+    .banner-content h1{ font-size:42px; }
+    .body-section{ flex-direction:column; padding:30px 20px; }
+    .col-right{ flex-direction:column; }
+    .game-thumb{ width:100%; height:320px; }
+    footer{ flex-direction:column; gap:34px; text-align:center; }
+    .footer-links{ justify-content:center; gap:40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== ATAS ===== -->
+<header>
+  <div class="topbar">
+     <img src=rust-marque.png alt="Logo">
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="banner-content">
+    <h1>RUST</h1>
+    <p>Bertahan hidup di pulau tak berpenghuni. Kumpulkan sumber daya, bangun basis, dan hadapi pemain lain demi bertahan hidup.</p>
+    <a href="#" class="btn-play">Main Sekarang</a>
+  </div>
+</header>
+
+<!-- ===== TENGAH ===== -->
+<div class="body-section">
+
+  <div class="col-left">
+    <h2>Genre Game</h2>
+    <ul>
+      <li>Survival <span>Bertahan Hidup</span></li>
+      <li>Action & Adventure <span>Aksi & Petualangan</span></li>
+      <li>MMO <span>Multiplayer Online</span></li>
+    </ul>
+  </div>
+
+  <div class="col-right">
+    <div class="text">
+      <h3>Tentang Game</h3>
+      <p>Kumpulkan bahan seperti kayu, kain, dan batu untuk membuat senjata serta bertahan hidup di kerasnya The Island.</p>
+      <p>Bangun basis terkuat, pasang jebakan mematikan, dan pertahankan loot berharga Anda dari serangan kelompok musuh.</p>
+      <p>Kuasai monumen penting, kalahkan penjaga ilmuwan, dan rebut pasokan udara (airdrop) terbaik demi mendominasi wilayah.</p>
+      <p>Server wipe berkala dan pembaruan konten setiap bulan memastikan setiap siklus bertahan hidup selalu terasa menantang dan baru.</p>
+    </div>
+    <div class="game-thumb">
+      <img src="poto.jpg" alt="Game Screenshot">
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== BAWAH ===== -->
+<footer>
+   <img src=rust-marque.png alt="Logo">
+
+  <div class="footer-links">
+    <div class="footer-col">
+      <h4>Quick Link</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Policy</h4>
+      <ul>
+        <li><a href="#">Policy</a></li>
+        <li><a href="#">Site Map</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Medsos</h4>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href= "https://www.tiktok.com/@kejumerahp?_r=1&_t=ZS-99YbAP7eVhV" target="_blank">TikTok</a></li>
+        <li><a href="https://youtu.be/iik25wqIuFo?si=O4gHsoZ1ULJtgeXp" target="_blank">YouTube</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
