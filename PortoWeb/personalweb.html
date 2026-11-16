@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal blog & portfolio oleh Senior Front-End Engineer. Rekayasa web cepat, bersih, semantik, dan terukur.">
+  <meta name="author" content="Rian Pratama">
+  <meta name="theme-color" content="#0C0D0E">
+
+  <!-- Open Graph / Meta Sosial -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Rian Pratama — Senior Front-End Engineer">
+  <meta property="og:description" content="Personal blog dan portofolio profesional rekayasa antarmuka web modern, cepat, dan aksesibel.">
+  <meta property="og:url" content="https://rianpratama.dev">
+
+  <title>Andrianto Eka Putra — Personal Blog & Portfolio</title>
+
+  <!-- Google Fonts: Space Grotesk (Heading) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="gate-locked">
+
+  <!-- ========================================================
+       1. GERBANG MASUK (ENTRY GATE OVERLAY)
+       ======================================================== -->
+  <div id="gateOverlay" class="gate-overlay" role="dialog" aria-modal="true" aria-labelledby="gateTitle" aria-describedby="gateDesc">
+    <div class="gate-backdrop"></div>
+    <div class="gate-modal modal-card">
+      <div class="gate-header">
+        <div class="gate-badge">
+          <span class="status-dot"></span>
+          <span>Akses Terbatas &bull; Verifikasi Tamu</span>
+        </div>
+        <h2 id="gateTitle" class="gate-title">Buku Tamu Digital</h2>
+        <p id="gateDesc" class="gate-desc">Silakan masukkan nama dan alamat email aktif untuk melanjutkan membaca artikel teknis dan portofolio saya.</p>
+      </div>
+
+      <form id="gateForm" class="gate-form" novalidate>
+        <div class="form-group">
+          <label for="visitorName" class="form-label">Nama Lengkap <span class="required">*</span></label>
+          <input type="text" id="visitorName" name="name" class="form-input" placeholder="Nama Anda" autocomplete="name" required minlength="2">
+          <span id="nameError" class="error-msg" aria-live="polite"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="visitorEmail" class="form-label">Alamat Email <span class="required">*</span></label>
+          <input type="email" id="visitorEmail" name="email" class="form-input" placeholder="nama@email.com" autocomplete="email" required>
+          <span id="emailError" class="error-msg" aria-live="polite"></span>
+        </div>
+
+        <button type="submit" id="gateSubmitBtn" class="btn btn-primary btn-block">
+          <span>Buka Akses Website</span>
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+
+        <p class="gate-privacy-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          Data tersimpan lokal di peramban Anda untuk personalisasi sapaan.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notifikasi Global -->
+  <div id="toastContainer" class="toast-container" aria-live="assertive" aria-atomic="true"></div>
+
+  <!-- ========================================================
+       2. HEADER & NAVBAR
+       ======================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="#beranda" class="brand-logo" aria-label="Beranda">
+        <span class="logo-box" id="navAvatarInitials">A</span>
+        <div class="logo-meta">
+          <span class="logo-name" id="navBrandName">Andrianto Eka Putra</span>
+          <span class="logo-role">CyberSecurity Engineer</span>
+        </div>
+      </a>
+
+      <!-- Menu Navigasi Desktop & Mobile -->
+      <nav class="nav-menu" id="navMenu" aria-label="Navigasi Utama">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#beranda" class="nav-link active">Beranda</a></li>
+          <li class="nav-item"><a href="#tentang" class="nav-link">Tentang</a></li>
+          <li class="nav-item"><a href="#skill" class="nav-link">Skill</a></li>
+          <li class="nav-item"><a href="#pengalaman" class="nav-link">Pengalaman</a></li>
+          <li class="nav-item"><a href="#proyek" class="nav-link">Proyek</a></li>
+          <li class="nav-item"><a href="#kontak" class="nav-link">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <!-- Aksi Navbar -->
+      <div class="nav-actions">
+        <!-- Toggle Tema Dark / Light -->
+        <button type="button" id="themeToggleBtn" class="icon-btn" aria-label="Ganti mode gelap/terang" title="Ganti Mode Tampilan">
+          <svg class="theme-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Status Sesi Tamu & Tombol Keluar -->
+        <div id="visitorPill" class="visitor-pill hidden">
+          <span class="visitor-dot"></span>
+          <span class="visitor-name" id="visitorPillName">Tamu</span>
+          <button type="button" id="logoutBtn" class="logout-btn" title="Keluar sesi & kunci gerbang" aria-label="Keluar dari sesi website">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Tombol Hamburger Mobile -->
+        <button type="button" id="mobileMenuBtn" class="icon-btn mobile-menu-btn" aria-label="Buka navigasi menu" aria-expanded="false" aria-controls="navMenu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <!-- ========================================================
+         3. HERO SECTION
+         ======================================================== -->
+    <section class="section hero-section" id="beranda">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-status-tag" id="heroGreetingBadge">
+            <span class="status-indicator"></span>
+            <span id="heroVisitorGreeting">Sesi Pengunjung Aktif</span>
+          </div>
+
+          <h1 class="hero-title">
+            Halo, saya <span class="highlight-yellow" id="heroName">Andrianto Eka Putra</span>.
+          </h1>
+
+          <div class="hero-role-wrapper">
+            <span class="role-prefix">// fokus:</span>
+            <span class="role-text highlight-green" id="typewriterText">Senior CyberSecurity Engineer</span>
+            <span class="role-cursor" aria-hidden="true">_</span>
+          </div>
+
+          <p class="hero-tagline" id="heroTagline">
+            Membangun sebuah keamanan dan pertahanan yang kuat dari serangan para Hacker.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#proyek" class="btn btn-primary">
+              <span>Lihat Proyek</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+            <a href="#kontak" class="btn btn-secondary">
+              <span>Hubungi Saya</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="author-frame">
+            <div class="author-avatar" id="heroAvatarInitials">RP</div>
+            <div class="author-label">
+              <span class="author-tag highlight-brown">KODE &bull; STRUKTUR &bull; SISTEM</span>
+              <span class="author-sub"> Ethical Hacking On Road</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         4. TENTANG SAYA & STATISTIK
+         ======================================================== -->
+    <section class="section about-section" id="tentang">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">// 01 &bull; PROFIL</span>
+          <h2 class="section-title">Tentang Saya</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card content-card">
+            <div class="location-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+              <span id="aboutLocation">Bogor, Indonesia (WIB / UTC+7)</span>
+            </div>
+            <div id="aboutBioContent" class="bio-text">
+              <!-- Paragraf Bio Dirender dari script.js -->
+            </div>
+          </div>
+
+          <!-- Grid Statistik -->
+          <div class="stats-grid" id="statsGrid">
+            <!-- Kartu Statistik Dirender dari script.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         5. KEAHLIAN / SKILL
+         ======================================================== -->
+    <section class="section skills-section" id="skill">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">// 02 &bull; KEMAMPUAN TEKNIS</span>
+          <h2 class="section-title">Keahlian & Perkakas</h2>
+        </div>
+
+        <div class="skills-grid" id="skillsGrid">
+          <!-- Skill Bar Dirender dari script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         6. PENGALAMAN & PENDIDIKAN
+         ======================================================== -->
+    <section class="section timeline-section" id="pengalaman">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">// 03 &bull; REKAM JEJAK</span>
+          <h2 class="section-title">Pengalaman & Pendidikan</h2>
+        </div>
+
+        <div class="timeline-wrapper">
+          <div class="timeline-column">
+            <div class="timeline-heading">
+              <span class="column-badge highlight-yellow">Karir Profesional</span>
+            </div>
+            <div class="timeline-list" id="experienceTimeline">
+              <!-- Item Pengalaman Dirender dari script.js -->
+            </div>
+          </div>
+
+          <div class="timeline-column">
+            <div class="timeline-heading">
+              <span class="column-badge highlight-brown">Pendidikan & Sertifikasi</span>
+            </div>
+            <div class="timeline-list" id="educationTimeline">
+              <!-- Item Pendidikan Dirender dari script.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         7. PROYEK UNGGULAN
+         ======================================================== -->
+    <section class="section projects-section" id="proyek">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">// 04 &bull; KARYA TERPILIH</span>
+          <h2 class="section-title">Proyek Unggulan</h2>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+          <!-- Proyek Dirender dari script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         8. KONTAK
+         ======================================================== -->
+    <section class="section contact-section" id="kontak">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">// 05 &bull; KOMUNIKASI</span>
+          <h2 class="section-title">Mari Saling Terhubung</h2>
+        </div>
+
+        <div class="contact-card content-card">
+          <div class="contact-left">
+            <h3 class="contact-lead">Terbuka untuk diberi konsultasi lebih dalam mengenai dasar CyberSecurity, evaluasi dan pengembangan diri, atau peluang kerja sama.</h3>
+            <a href="mailto:rian.pratama@example.com" class="contact-email-box" id="contactEmailLink">
+              <span class="email-label">Email Langsung:</span>
+              <span class="email-val" id="contactEmailText">AndriantoEkaPutra@gmail.com</span>
+            </a>
+          </div>
+
+          <div class="contact-right">
+            <span class="social-label">Jejaring Sosial & Kode:</span>
+            <div class="social-links" id="socialLinks">
+              <!-- Ikon Sosial Dirender dari script.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================
+       10. FOOTER
+       ======================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <p class="footer-copy">
+          &copy; <span id="currentYear">2026</span> <strong id="footerAuthorName">Andrianto Eka Putra</strong>.
+        </p>
+        <p class="footer-note">
+          Dibuat dengan HTML5, CSS3, dan Vanilla JS murni. Tanpa framework, tanpa pustaka eksternal.
+        </p>
+      </div>
+
+      <div class="footer-right">
+        <button type="button" id="backToTopBtn" class="back-to-top-btn" aria-label="Kembali ke atas halaman">
+          <span>Ke Atas</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
