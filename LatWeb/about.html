@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Tujuan Pembuatan Web</title>
+    <!-- CSS Utama & Font Cyberpunk -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ================= BAGIAN HEADER ================= -->
+    <header id="header">
+      <div id="topbar">
+        <div id="logo">
+            <a href="Tugas Web.htm"><img src="logo.jpg" alt="Logo Utama"></a>
+        </div>
+
+        <nav id="navbar">
+            <a href="home.html">Home</a>
+            <span>|</span>
+
+            <a href="about.html" class="active">About</a>
+            <span>|</span>
+
+            <a href="service.html">Service</a>
+            <span>|</span>
+
+            <!-- Dropdown Contact Wrapper -->
+            <div class="contact-dropdown-wrapper">
+                <a href="#contact" class="contact-trigger">Contact ▾</a>
+
+                <!-- ================= KARTU DROPDOWN KONTAK (BISA DIEDIT MANUAL) ================= -->
+                <div id="contact-card-dropdown">
+                    <button class="close-contact-btn" title="Tutup">✕</button>
+                    
+                    <div class="contact-card-header">
+                        <!-- Foto Profil / Logo Profil (Bisa diedit src-nya) -->
+                        <img src="Logo-punk.jpg" alt="Logo Profil" class="contact-profile-img">
+                        <div class="contact-profile-info">
+                            <!-- NAMA & ROLE (Bisa diedit manual) -->
+                            <h3>Anto / Web Creator</h3>
+                            <span class="status-tag">Online & Available</span>
+                        </div>
+                    </div>
+
+                    <ul class="contact-detail-list">
+                        <!-- NOMOR TELEPON / WHATSAPP (Bisa diedit manual) -->
+                        <li class="contact-item">
+                            <span class="label">Nomor Telepon / WA:</span>
+                            <a href="tel:+6281234567890" class="value">+62 812-3456-7890</a>
+                        </li>
+                        
+                        <!-- EMAIL (Bisa diedit manual) -->
+                        <li class="contact-item">
+                            <span class="label">Alamat Email:</span>
+                            <a href="mailto:contact@cyberpunk-net.id" class="value">contact@cyberpunk-net.id</a>
+                        </li>
+
+                        <!-- LOKASI / DISTRIK (Bisa diedit manual) -->
+                        <li class="contact-item">
+                            <span class="label">Distrik / Lokasi:</span>
+                            <span class="value">Watson District, Night City</span>
+                        </li>
+                    </ul>
+
+                    <!-- Tombol Chat WA Cepat (Ganti nomor di link wa.me) -->
+                    <a href="https://wa.me/6281234567890" target="_blank" class="contact-btn-wa">
+                        ⚡ Hubungi via WhatsApp
+                    </a>
+                </div>
+                <!-- ================= AKHIR KARTU DROPDOWN KONTAK ================= -->
+            </div>
+        </nav>
+      </div>
+
+      <!-- Banner Hero Text Header -->
+      <div class="header-hero">
+          <span class="badge">TENTANG KAMI (ABOUT)</span>
+          <h1>TUJUAN PEMBUATAN WEB</h1>
+          <p>Memahami latar belakang, visi, misi, dan target yang ingin dicapai melalui perancangan antarmuka web futuristik bertema Cyberpunk.</p>
+      </div>
+    </header>
+    
+    <!-- ================= BAGIAN ISI (BODY) INTERAKTIF ================= -->
+    <main id="body">
+        <div id="body-layer">
+
+            <!-- ==> Sisi Kiri: Menu Tab Tujuan Pembuatan Web <== -->
+            <aside id="list">
+                <div class="sidebar-header">
+                    <h2>Daftar Tujuan</h2>
+                </div>
+                <ul>
+                    <li class="active" data-tab="tab-goal">
+                        <button type="button">
+                            <span>Tujuan Utama</span>
+                            <span class="nav-indicator">➔</span>
+                        </button>
+                    </li>
+                    <li data-tab="tab-vision">
+                        <button type="button">
+                            <span>Visi & Misi</span>
+                            <span class="nav-indicator">➔</span>
+                        </button>
+                    </li>
+                    <li data-tab="tab-target">
+                        <button type="button">
+                            <span>Target Audiens</span>
+                            <span class="nav-indicator">➔</span>
+                        </button>
+                    </li>
+                    <li data-tab="tab-roadmap">
+                        <button type="button">
+                            <span>Rencana Masa Depan</span>
+                            <span class="nav-indicator">➔</span>
+                        </button>
+                    </li>
+                </ul>
+            </aside>
+        
+            <!-- ==> Sisi Kanan: Konten Berpindah dengan Transisi Animasi (BISA DIEDIT MANUAL) <== -->
+            <section id="content">
+
+                <!-- ================= TAB 1: TUJUAN UTAMA (BISA DIEDIT MANUAL) ================= -->
+                <article class="tab-panel active" id="tab-goal">
+                    <h1 class="maintitle">
+                        Tujuan Utama Pembuatan Web
+                        <span class="section-tag">About #01</span>
+                    </h1>
+
+                    <!-- [EDIT MANUAL]: Penjelasan Tujuan Utama -->
+                    <div class="content-intro">
+                        <p>Website ini dikembangkan sebagai wujud eksplorasi desain web tingkat lanjut, yang bertujuan membuktikan bahwa antarmuka web bertema tematik (seperti Cyberpunk) dapat dikemas secara profesional, interaktif, dan fungsional tanpa mengorbankan kecepatan akses.</p>
+                    </div>
+
+                    <div class="content-body">
+                        <div class="content-left">
+                            <h4>Objektif yang Ingin Dicapai:</h4>
+                            <!-- [EDIT MANUAL]: Poin-Poin Tujuan -->
+                            <ul>
+                                <li><strong>Implementasi Desain Modern:</strong> Menggabungkan layout responsif, tipografi khusus, dan animasi transisi modern berbasis CSS3 & JS murni.</li>
+                                <li><strong>Media Portofolio Kreatif:</strong> Menjadi wadah karya kreatif yang menampilkan kemampuan teknis dalam merancang frontend yang unik dan memikat.</li>
+                                <li><strong>Penyajian Informasi Terstruktur:</strong> Memudahkan pembaca mempelajari konten seputar dunia Cyberpunk maupun informasi proyek web secara sistematis.</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-right">
+                            <!-- [EDIT MANUAL]: Kartu Info Tujuan -->
+                            <div class="card-info">
+                                <span>Fokus Utama</span>
+                                <p>UI/UX Interaktif & Visual Futuristik</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Tingkat Efisiensi</span>
+                                <p>Ringan & Bebas Dependensi Berat</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Target Kualitas</span>
+                                <p>Standard Industri Web Modern</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ================= TAB 2: VISI & MISI (BISA DIEDIT MANUAL) ================= -->
+                <article class="tab-panel" id="tab-vision">
+                    <h1 class="maintitle">
+                        Visi & Misi Pengembangan
+                        <span class="section-tag">About #02</span>
+                    </h1>
+
+                    <div class="content-intro">
+                        <p>Menciptakan ekosistem web yang memberikan pengalaman visual tak terlupakan bagi pengunjung sembari mempertahankan navigasi intuitif yang ramah pengguna.</p>
+                    </div>
+
+                    <div class="content-body">
+                        <div class="content-left">
+                            <h4>Pilar Visi & Misi:</h4>
+                            <ul>
+                                <li><strong>Visi:</strong> Menjadi rujukan desain web futuristik berorientasi interaktivitas tinggi yang menginspirasi para developer muda.</li>
+                                <li><strong>Misi 1:</strong> Menghadirkan transisi animasi yang mulus di setiap elemen klik pada halaman.</li>
+                                <li><strong>Misi 2:</strong> Menyediakan kode HTML & CSS yang bersih, rapi, dan sangat mudah dimodifikasi secara manual.</li>
+                                <li><strong>Misi 3:</strong> Mengintegrasikan sistem komunikasi kontak instan yang langsung terhubung ke WhatsApp dan profil resmi.</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-right">
+                            <div class="card-info">
+                                <span>Visi Utama</span>
+                                <p>Inovasi Desain Web Futuristik</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Misi Kunci</span>
+                                <p>Aksesibilitas & Kode Modular</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Nilai Utama</span>
+                                <p>Kreativitas, Presisi, & Responsivitas</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ================= TAB 3: TARGET AUDIENS (BISA DIEDIT MANUAL) ================= -->
+                <article class="tab-panel" id="tab-target">
+                    <h1 class="maintitle">
+                        Target Pengguna & Audiens
+                        <span class="section-tag">About #03</span>
+                    </h1>
+
+                    <div class="content-intro">
+                        <p>Website ini ditargetkan untuk berbagai kalangan pengguna, mulai dari akademisi, komunitas penggemar sci-fi, hingga profesional di industri teknologi digital.</p>
+                    </div>
+
+                    <div class="content-body">
+                        <div class="content-left">
+                            <h4>Kelompok Pengguna Utama:</h4>
+                            <ul>
+                                <li><strong>Penggemar Tema Cyberpunk & Sci-Fi:</strong> Mereka yang ingin menikmati nuansa visual Night City dengan konten narasi yang mendalam.</li>
+                                <li><strong>Mahasiswa & Pelajar Web:</strong> Menjadi contoh studi kasus nyata tentang cara membangun tab switcher dan modal dropdown tanpa framework berat.</li>
+                                <li><strong>Klien & Kolaborator:</strong> Calon mitra yang mencari jasa pembuatan website interaktif dengan identitas visual yang menonjol.</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-right">
+                            <div class="card-info">
+                                <span>Target Primer</span>
+                                <p>Komunitas Web Dev & Gamer</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Tingkat Pengalaman</span>
+                                <p>Pemula hingga Profesional</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Jangkauan</span>
+                                <p>Nasional & Internasional</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ================= TAB 4: RENCANA MASA DEPAN (BISA DIEDIT MANUAL) ================= -->
+                <article class="tab-panel" id="tab-roadmap">
+                    <h1 class="maintitle">
+                        Rencana Pengembangan (Roadmap)
+                        <span class="section-tag">About #04</span>
+                    </h1>
+
+                    <div class="content-intro">
+                        <p>Pengembangan website ini tidak berhenti di sini. Terdapat beberapa rencana pembaruan fitur di masa mendatang guna memperkaya fungsionalitas dan interaktivitas sistem.</p>
+                    </div>
+
+                    <div class="content-body">
+                        <div class="content-left">
+                            <h4>Agenda Rencana Pengembangan:</h4>
+                            <ul>
+                                <li><strong>Efek Suara Terminal (SFX):</strong> Menambahkan efek audio klik tombol bertema synthwave sci-fi opsional.</li>
+                                <li><strong>Fitur Galeri Interaktif:</strong> Menambahkan slider screenshot konsep seni Night City dengan efek lightbox.</li>
+                                <li><strong>Formulir Kontak Terintegrasi:</strong> Formulir pesan instan yang langsung terkirim ke WhatsApp / Email tanpa perantara.</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-right">
+                            <div class="card-info">
+                                <span>Fase 1 (Selesai)</span>
+                                <p>Upgrade Navigasi & Transisi Halus</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Fase 2 (Berikutnya)</span>
+                                <p>Audio SFX & Dynamic Dark Mode</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Fase 3 (Masa Depan)</span>
+                                <p>Integrasi Database & API Live</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </section>
+        </div>
+    </main>
+    
+    <!-- ================= BAGIAN FOOTER ================= -->
+    <footer id="footer">
+      <div id="footer-layer">
+
+         <div id="footer-logo">
+            <img src="logo.jpg" alt="Logo Footer">
+            <div class="footer-brand-text">
+                <h4>NIGHT CITY ARCHIVE</h4>
+                <p>Distopia Futuristik 2076</p>
+            </div>
+         </div>
+
+         <div id="footer-nav">
+          <h3>Quick Link</h3>
+          <div class="nav-links">
+              <a href="home.html">Home</a>
+              <a href="about.html">About</a>
+              <a href="service.html">Service</a>
+              <a href="#contact" class="contact-trigger">Contact</a>
+          </div>
+         </div>
+
+         <div id="footer-social">
+          <h3>Media Sosial</h3>
+          <ul>
+            <li>Instagram: <a href="https://instagram.com" target="_blank">@_4nto0o</a></li>
+            <li>TikTok   : <a href="https://tiktok.com" target="_blank">@_4nto0o</a></li>
+          </ul>
+         </div>
+
+      </div>
+    </footer>
+
+    <!-- Script JavaScript untuk Animasi & Interaksi Tab -->
+    <script src="script.js"></script>
+</body>
+</html>

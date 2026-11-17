@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Perkenalan Isi Web</title>
+    <!-- CSS Utama & Font Cyberpunk -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ================= BAGIAN HEADER ================= -->
+    <header id="header">
+      <div id="topbar">
+        <div id="logo">
+            <a href="Tugas Web.htm"><img src="logo.jpg" alt="Logo Utama"></a>
+        </div>
+
+        <nav id="navbar">
+            <a href="home.html" class="active">Home</a>
+            <span>|</span>
+
+            <a href="about.html">About</a>
+            <span>|</span>
+
+            <a href="service.html">Service</a>
+            <span>|</span>
+
+            <!-- Dropdown Contact Wrapper -->
+            <div class="contact-dropdown-wrapper">
+                <a href="#contact" class="contact-trigger">Contact ▾</a>
+
+                <!-- ================= KARTU DROPDOWN KONTAK (BISA DIEDIT MANUAL) ================= -->
+                <div id="contact-card-dropdown">
+                    <button class="close-contact-btn" title="Tutup">✕</button>
+                    
+                    <div class="contact-card-header">
+                        <!-- Foto Profil / Logo Profil (Bisa diedit src-nya) -->
+                        <img src="Logo-punk.jpg" alt="Logo Profil" class="contact-profile-img">
+                        <div class="contact-profile-info">
+                            <!-- NAMA & ROLE (Bisa diedit manual) -->
+                            <h3>Anto / Web Creator</h3>
+                            <span class="status-tag">Online & Available</span>
+                        </div>
+                    </div>
+
+                    <ul class="contact-detail-list">
+                        <!-- NOMOR TELEPON / WHATSAPP (Bisa diedit manual) -->
+                        <li class="contact-item">
+                            <span class="label">Nomor Telepon / WA:</span>
+                            <a href="tel:+6281234567890" class="value">+62 812-3456-7890</a>
+                        </li>
+                        
+                        <!-- EMAIL (Bisa diedit manual) -->
+                        <li class="contact-item">
+                            <span class="label">Alamat Email:</span>
+                            <a href="mailto:contact@cyberpunk-net.id" class="value">contact@cyberpunk-net.id</a>
+                        </li>
+
+                        <!-- LOKASI / DISTRIK (Bisa diedit manual) -->
+                        <li class="contact-item">
+                            <span class="label">Distrik / Lokasi:</span>
+                            <span class="value">Watson District, Night City</span>
+                        </li>
+                    </ul>
+
+                    <!-- Tombol Chat WA Cepat (Ganti nomor di link wa.me) -->
+                    <a href="https://wa.me/6281234567890" target="_blank" class="contact-btn-wa">
+                        ⚡ Hubungi via WhatsApp
+                    </a>
+                </div>
+                <!-- ================= AKHIR KARTU DROPDOWN KONTAK ================= -->
+            </div>
+        </nav>
+      </div>
+
+      <!-- Banner Hero Text Header -->
+      <div class="header-hero">
+          <span class="badge">HALAMAN UTAMA (HOME)</span>
+          <h1>PERKENALAN ISI WEB</h1>
+          <p>Selamat datang di portal informasi resmi bertema Cyberpunk. Halaman ini menyajikan pengenalan menyeluruh mengenai seluruh konten, struktur, dan modul yang tersedia di dalam web.</p>
+      </div>
+    </header>
+    
+    <!-- ================= BAGIAN ISI (BODY) INTERAKTIF ================= -->
+    <main id="body">
+        <div id="body-layer">
+
+            <!-- ==> Sisi Kiri: Menu Tab Perkenalan <== -->
+            <aside id="list">
+                <div class="sidebar-header">
+                    <h2>Navigasi Home</h2>
+                </div>
+                <ul>
+                    <li class="active" data-tab="tab-intro">
+                        <button type="button">
+                            <span>Gambaran Umum</span>
+                            <span class="nav-indicator">➔</span>
+                        </button>
+                    </li>
+                    <li data-tab="tab-structure">
+                        <button type="button">
+                            <span>Struktur Konten</span>
+                            <span class="nav-indicator">➔</span>
+                        </button>
+                    </li>
+                    <li data-tab="tab-theme">
+                        <button type="button">
+                            <span>Konsep & Desain</span>
+                            <span class="nav-indicator">➔</span>
+                        </button>
+                    </li>
+                    <li data-tab="tab-guide">
+                        <button type="button">
+                            <span>Panduan Pengguna</span>
+                            <span class="nav-indicator">➔</span>
+                        </button>
+                    </li>
+                </ul>
+            </aside>
+        
+            <!-- ==> Sisi Kanan: Konten Berpindah dengan Transisi Animasi (BISA DIEDIT MANUAL) <== -->
+            <section id="content">
+
+                <!-- ================= TAB 1: GAMBARAN UMUM (BISA DIEDIT MANUAL) ================= -->
+                <article class="tab-panel active" id="tab-intro">
+                    <h1 class="maintitle">
+                        Gambaran Umum Web
+                        <span class="section-tag">Home #01</span>
+                    </h1>
+
+                    <!-- [EDIT MANUAL]: Paragraf Ringkasan Perkenalan Web -->
+                    <div class="content-intro">
+                        <p>Website ini merupakan platform interaktif bertema futuristik distopia (Cyberpunk 2076) yang dirancang khusus untuk memadukan estetika visual neon sci-fi dengan pengalaman penjelajahan web yang responsif, cepat, dan modern.</p>
+                    </div>
+
+                    <div class="content-body">
+                        <div class="content-left">
+                            <h4>Poin Penting Pengenalan:</h4>
+                            <!-- [EDIT MANUAL]: Daftar Poin Isi Web -->
+                            <ul>
+                                <li><strong>Tema Cyberpunk Edgerunners:</strong> Mengangkat atmosfer Night City dengan elemen visual gelap berpadu aksen kuning neon cerah.</li>
+                                <li><strong>Navigasi Cepat & Terpadu:</strong> Akses mudah ke menu Home, About, Service, dan modul Kontak mengambang.</li>
+                                <li><strong>Modular & Dinamis:</strong> Setiap halaman dirancang dengan struktur teratur sehingga konten teks, kartu data, dan link dapat diubah dengan mudah.</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-right">
+                            <!-- [EDIT MANUAL]: Kartu Informasi Ringkas -->
+                            <div class="card-info">
+                                <span>Kategori Web</span>
+                                <p>Interactive Portfolio & Showcase</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Basis Teknologi</span>
+                                <p>HTML5, CSS3, & JavaScript ES6</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Status Rilis</span>
+                                <p>Versi 2.0 (Upgrade Interaktif)</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ================= TAB 2: STRUKTUR KONTEN (BISA DIEDIT MANUAL) ================= -->
+                <article class="tab-panel" id="tab-structure">
+                    <h1 class="maintitle">
+                        Struktur & Cakupan Konten
+                        <span class="section-tag">Home #02</span>
+                    </h1>
+
+                    <div class="content-intro">
+                        <p>Seluruh sistem di dalam website ini dibagi menjadi beberapa bagian utama yang saling terhubung untuk memberikan informasi yang lengkap kepada pengunjung.</p>
+                    </div>
+
+                    <div class="content-body">
+                        <div class="content-left">
+                            <h4>Bagian-Bagian Utama Website:</h4>
+                            <ul>
+                                <li><strong>Halaman Utama (Tugas Web):</strong> Menampilkan database ensiklopedia lore Night City, faksi Edgerunners, dan teknologi cyberware.</li>
+                                <li><strong>Halaman About:</strong> Menguraikan visi, misi, serta tujuan utama pembuatan website bagi pengguna.</li>
+                                <li><strong>Halaman Service:</strong> Menyajikan katalog layanan dan kapabilitas pengembangan web yang ditawarkan.</li>
+                                <li><strong>Fitur Contact Dropdown:</strong> Menyediakan kartu profil interaktif dengan nomor kontak cepat dan tombol WhatsApp.</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-right">
+                            <div class="card-info">
+                                <span>Total Halaman</span>
+                                <p>4 Halaman Utama Terhubung</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Interaktivitas</span>
+                                <p>Tab Switcher & Dynamic Dropdown</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Kemudahan Edit</span>
+                                <p>100% Manual Editable Code</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ================= TAB 3: KONSEP & DESAIN (BISA DIEDIT MANUAL) ================= -->
+                <article class="tab-panel" id="tab-theme">
+                    <h1 class="maintitle">
+                        Konsep Desain & Estetika
+                        <span class="section-tag">Home #03</span>
+                    </h1>
+
+                    <div class="content-intro">
+                        <p>Konsep visual menggabungkan palet warna gelap kontras tinggi (Dark Matte) dengan aksen kuning emas (Cyberpunk Yellow) dan cyan neon, menciptakan nuansa terminal konsol futuristik yang elegan.</p>
+                    </div>
+
+                    <div class="content-body">
+                        <div class="content-left">
+                            <h4>Filosofi Desain Antarmuka:</h4>
+                            <ul>
+                                <li><strong>Transisi Halus:</strong> Setiap perpindahan tab menggunakan transisi CSS easing untuk kenyamanan mata pengguna.</li>
+                                <li><strong>Tipografi Berkarakter:</strong> Menggunakan font bertema sci-fi seperti <em>Orbitron</em> dan <em>Rajdhani</em> untuk mempertegas identitas cyberpunk.</li>
+                                <li><strong>Glassmorphism & Glow:</strong> Efek blur transparan dan pantulan cahaya neon pada kartu dan tombol navigasi.</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-right">
+                            <div class="card-info">
+                                <span>Warna Primer</span>
+                                <p>#ffd500 (Neon Cyber Yellow)</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Warna Latar</span>
+                                <p>#050608 (Deep Cyberpunk Black)</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Efek Animasi</span>
+                                <p>Smooth Slide & Fade Transitions</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ================= TAB 4: PANDUAN PENGGUNA (BISA DIEDIT MANUAL) ================= -->
+                <article class="tab-panel" id="tab-guide">
+                    <h1 class="maintitle">
+                        Panduan Penjelajahan
+                        <span class="section-tag">Home #04</span>
+                    </h1>
+
+                    <div class="content-intro">
+                        <p>Website ini sangat mudah dijelajahi baik melalui desktop maupun perangkat mobile. Berikut adalah cara memaksimalkan fitur yang tersedia.</p>
+                    </div>
+
+                    <div class="content-body">
+                        <div class="content-left">
+                            <h4>Langkah-Langkah Menjelajahi:</h4>
+                            <ul>
+                                <li><strong>Klik Menu Sidebar:</strong> Pilih salah satu opsi di bilah sisi kiri untuk mengganti konten di sisi kanan tanpa memuat ulang (reload) halaman.</li>
+                                <li><strong>Buka Dropdown Kontak:</strong> Klik tombol <em>Contact ▾</em> di navbar atas atau footer bawah untuk melihat profil, nomor telepon, dan WhatsApp.</li>
+                                <li><strong>Kustomisasi Konten:</strong> Anda dapat membuka file ini di text editor dan langsung mengganti teks di dalam tag <code>&lt;p&gt;</code> atau <code>&lt;li&gt;</code>.</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-right">
+                            <div class="card-info">
+                                <span>Perangkat Didukung</span>
+                                <p>Desktop, Tablet, & Smartphone</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Kecepatan Akses</span>
+                                <p>Ultra Cepat Tanpa Reload</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Bantuan Kontak</span>
+                                <p>Tersedia di Menu Contact</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </section>
+        </div>
+    </main>
+    
+    <!-- ================= BAGIAN FOOTER ================= -->
+    <footer id="footer">
+      <div id="footer-layer">
+
+         <div id="footer-logo">
+            <img src="logo.jpg" alt="Logo Footer">
+            <div class="footer-brand-text">
+                <h4>NIGHT CITY ARCHIVE</h4>
+                <p>Distopia Futuristik 2076</p>
+            </div>
+         </div>
+
+         <div id="footer-nav">
+          <h3>Quick Link</h3>
+          <div class="nav-links">
+              <a href="home.html">Home</a>
+              <a href="about.html">About</a>
+              <a href="service.html">Service</a>
+              <a href="#contact" class="contact-trigger">Contact</a>
+          </div>
+         </div>
+
+         <div id="footer-social">
+          <h3>Media Sosial</h3>
+          <ul>
+            <li>Instagram: <a href="https://instagram.com" target="_blank">@_4nto0o</a></li>
+            <li>TikTok   : <a href="https://tiktok.com" target="_blank">@_4nto0o</a></li>
+          </ul>
+         </div>
+
+      </div>
+    </footer>
+
+    <!-- Script JavaScript untuk Animasi & Interaksi Tab -->
+    <script src="script.js"></script>
+</body>
+</html>

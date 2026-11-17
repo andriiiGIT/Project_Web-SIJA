@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service - Layanan Website</title>
+    <!-- CSS Utama & Font Cyberpunk -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ================= BAGIAN HEADER ================= -->
+    <header id="header">
+      <div id="topbar">
+        <div id="logo">
+            <a href="Tugas Web.htm"><img src="logo.jpg" alt="Logo Utama"></a>
+        </div>
+
+        <nav id="navbar">
+            <a href="home.html">Home</a>
+            <span>|</span>
+
+            <a href="about.html">About</a>
+            <span>|</span>
+
+            <a href="service.html" class="active">Service</a>
+            <span>|</span>
+
+            <!-- Dropdown Contact Wrapper -->
+            <div class="contact-dropdown-wrapper">
+                <a href="#contact" class="contact-trigger">Contact ▾</a>
+
+                <!-- ================= KARTU DROPDOWN KONTAK (BISA DIEDIT MANUAL) ================= -->
+                <div id="contact-card-dropdown">
+                    <button class="close-contact-btn" title="Tutup">✕</button>
+                    
+                    <div class="contact-card-header">
+                        <!-- Foto Profil / Logo Profil (Bisa diedit src-nya) -->
+                        <img src="Logo-punk.jpg" alt="Logo Profil" class="contact-profile-img">
+                        <div class="contact-profile-info">
+                            <!-- NAMA & ROLE (Bisa diedit manual) -->
+                            <h3>Anto / Web Creator</h3>
+                            <span class="status-tag">Online & Available</span>
+                        </div>
+                    </div>
+
+                    <ul class="contact-detail-list">
+                        <!-- NOMOR TELEPON / WHATSAPP (Bisa diedit manual) -->
+                        <li class="contact-item">
+                            <span class="label">Nomor Telepon / WA:</span>
+                            <a href="tel:+6281234567890" class="value">+62 812-3456-7890</a>
+                        </li>
+                        
+                        <!-- EMAIL (Bisa diedit manual) -->
+                        <li class="contact-item">
+                            <span class="label">Alamat Email:</span>
+                            <a href="mailto:contact@cyberpunk-net.id" class="value">contact@cyberpunk-net.id</a>
+                        </li>
+
+                        <!-- LOKASI / DISTRIK (Bisa diedit manual) -->
+                        <li class="contact-item">
+                            <span class="label">Distrik / Lokasi:</span>
+                            <span class="value">Watson District, Night City</span>
+                        </li>
+                    </ul>
+
+                    <!-- Tombol Chat WA Cepat (Ganti nomor di link wa.me) -->
+                    <a href="https://wa.me/6281234567890" target="_blank" class="contact-btn-wa">
+                        ⚡ Hubungi via WhatsApp
+                    </a>
+                </div>
+                <!-- ================= AKHIR KARTU DROPDOWN KONTAK ================= -->
+            </div>
+        </nav>
+      </div>
+
+      <!-- Banner Hero Text Header -->
+      <div class="header-hero">
+          <span class="badge">LAYANAN KAMI (SERVICE)</span>
+          <h1>LAYANAN PENGEMBANGAN WEB</h1>
+          <p>Solusi profesional pembuatan dan perancangan website berkinerja tinggi, interaktif, dengan visual tematik modern untuk meningkatkan daya saing brand Anda.</p>
+      </div>
+    </header>
+    
+    <!-- ================= BAGIAN ISI (BODY) INTERAKTIF ================= -->
+    <main id="body">
+        <div id="body-layer">
+
+            <!-- ==> Sisi Kiri: Menu Tab Layanan <== -->
+            <aside id="list">
+                <div class="sidebar-header">
+                    <h2>Katalog Layanan</h2>
+                </div>
+                <ul>
+                    <li class="active" data-tab="tab-custom-web">
+                        <button type="button">
+                            <span>Custom Web Dev</span>
+                            <span class="nav-indicator">➔</span>
+                        </button>
+                    </li>
+                    <li data-tab="tab-ui-ux">
+                        <button type="button">
+                            <span>UI/UX Futuristik</span>
+                            <span class="nav-indicator">➔</span>
+                        </button>
+                    </li>
+                    <li data-tab="tab-interactive">
+                        <button type="button">
+                            <span>Animasi & Transisi</span>
+                            <span class="nav-indicator">➔</span>
+                        </button>
+                    </li>
+                    <li data-tab="tab-consulting">
+                        <button type="button">
+                            <span>Maintenance & Solusi</span>
+                            <span class="nav-indicator">➔</span>
+                        </button>
+                    </li>
+                </ul>
+            </aside>
+        
+            <!-- ==> Sisi Kanan: Konten Berpindah dengan Transisi Animasi (BISA DIEDIT MANUAL) <== -->
+            <section id="content">
+
+                <!-- ================= TAB 1: CUSTOM WEB DEV (BISA DIEDIT MANUAL) ================= -->
+                <article class="tab-panel active" id="tab-custom-web">
+                    <h1 class="maintitle">
+                        Custom Web Development
+                        <span class="section-tag">Service #01</span>
+                    </h1>
+
+                    <!-- [EDIT MANUAL]: Penjelasan Layanan 1 -->
+                    <div class="content-intro">
+                        <p>Layanan pembuatan website custom dari awal sesuai kebutuhan spesifik Anda. Kami mengutamakan struktur kode yang bersih, efisien, dan mudah dimodifikasi tanpa ketergantungan pada plugin yang memberatkan kecepatan web.</p>
+                    </div>
+
+                    <div class="content-body">
+                        <div class="content-left">
+                            <h4>Fitur & Fasilitas yang Didapat:</h4>
+                            <!-- [EDIT MANUAL]: Detail Fitur Layanan -->
+                            <ul>
+                                <li><strong>Full Responsive Design:</strong> Tampilan presisi di smartphone, tablet, laptop, hingga monitor resolusi ultra-wide.</li>
+                                <li><strong>Struktur Semantik HTML5:</strong> Standar penulisan kode terkini yang ramah SEO dan mudah dipahami developer lain.</li>
+                                <li><strong>Arsitektur Modular:</strong> Pemisahan file CSS, JavaScript, dan HTML terstruktur sehingga perawatan berkala menjadi sangat cepat.</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-right">
+                            <!-- [EDIT MANUAL]: Kartu Info Layanan -->
+                            <div class="card-info">
+                                <span>Estimasi Waktu</span>
+                                <p>3 - 7 Hari Pengerjaan</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Tingkat Kustomisasi</span>
+                                <p>100% Fleksibel Sesuai Request</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Dukungan Teknis</span>
+                                <p>Gratis Konsultasi 30 Hari</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ================= TAB 2: UI/UX FUTURISTIK (BISA DIEDIT MANUAL) ================= -->
+                <article class="tab-panel" id="tab-ui-ux">
+                    <h1 class="maintitle">
+                        Desain UI/UX Futuristik
+                        <span class="section-tag">Service #02</span>
+                    </h1>
+
+                    <div class="content-intro">
+                        <p>Hadirkan identitas visual yang ikonik dan tak terlupakan bagi pengunjung. Kami merancang desain antarmuka bernuansa Cyberpunk, Sci-Fi, Dark Mode, maupun Modern Minimalis yang memukau.</p>
+                    </div>
+
+                    <div class="content-body">
+                        <div class="content-left">
+                            <h4>Keunggulan Desain Kami:</h4>
+                            <ul>
+                                <li><strong>Palet Warna Khusus:</strong> Perpaduan kontras tinggi, efek neon glow, dan pencahayaan aksen yang proporsional.</li>
+                                <li><strong>Komponen Glassmorphism:</strong> Panel kartu semi-transparan dengan efek blur latar belakang yang modern.</li>
+                                <li><strong>Navigasi Intuitif:</strong> Tata letak tombol dan menu yang dirancang agar alur penjelajahan terasa alami dan nyaman.</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-right">
+                            <div class="card-info">
+                                <span>Gaya Desain</span>
+                                <p>Cyberpunk, Synthwave, & Modern Dark</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Aset Diberikan</span>
+                                <p>Palet Warna & Font Web Terlisensi</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Revisi Desain</span>
+                                <p>Hingga Sesuai Ekspektasi Klien</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ================= TAB 3: ANIMASI & TRANSISI (BISA DIEDIT MANUAL) ================= -->
+                <article class="tab-panel" id="tab-interactive">
+                    <h1 class="maintitle">
+                        Upgrade Interaktivitas & Transisi
+                        <span class="section-tag">Service #03</span>
+                    </h1>
+
+                    <div class="content-intro">
+                        <p>Mengubah website statis yang membosankan menjadi portal interaktif yang hidup. Dengan animasi transisi saat diklik, efek hover 3D, dan sistem tab dinamis tanpa reload halaman.</p>
+                    </div>
+
+                    <div class="content-body">
+                        <div class="content-left">
+                            <h4>Peningkatan Interaksi yang Ditawarkan:</h4>
+                            <ul>
+                                <li><strong>Smooth Tab Switching:</strong> Transisi halus saat memilih menu konten di dalam satu layar tanpa reload browser.</li>
+                                <li><strong>Interactive Dropdowns & Modals:</strong> Menu kontak slide-down dengan kartu profil dan tombol WhatsApp sekali klik.</li>
+                                <li><strong>Hover Micro-Interactions:</strong> Efek timbul, perubahan glow, dan indikator panah dinamis pada elemen yang disentuh kursor.</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-right">
+                            <div class="card-info">
+                                <span>Metode Animasi</span>
+                                <p>Pure CSS3 Keyframes & Light JS</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Dampak Performa</span>
+                                <p>60 FPS Ringan Tanpa Lag</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Kompatibilitas</span>
+                                <p>Semua Browser Populer Modern</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ================= TAB 4: MAINTENANCE & SOLUSI (BISA DIEDIT MANUAL) ================= -->
+                <article class="tab-panel" id="tab-consulting">
+                    <h1 class="maintitle">
+                        Maintenance & Konsultasi Web
+                        <span class="section-tag">Service #04</span>
+                    </h1>
+
+                    <div class="content-intro">
+                        <p>Layanan pendampingan teknis dan perawatan berkala untuk memastikan performa website Anda selalu prima, bebas error, dan kontennya senantiasa up-to-date.</p>
+                    </div>
+
+                    <div class="content-body">
+                        <div class="content-left">
+                            <h4>Ruang Lingkup Perawatan:</h4>
+                            <ul>
+                                <li><strong>Audit Kode & Perbaikan Bug:</strong> Mengidentifikasi kendala tampilan yang rusak atau fungsi JavaScript yang tidak berjalan.</li>
+                                <li><strong>Pembaruan Konten:</strong> Membantu mengubah teks, memperbarui nomor kontak, menambahkan portofolio, dan mengganti gambar.</li>
+                                <li><strong>Konsultasi Frontend:</strong> Memberikan masukan strategis mengenai tren teknologi web dan optimasi pengalaman pengguna.</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-right">
+                            <div class="card-info">
+                                <span>Paket Perawatan</span>
+                                <p>Insidental atau Bulanan</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Respon Support</span>
+                                <p>Cepat Melalui Chat WhatsApp</p>
+                            </div>
+                            <div class="card-info">
+                                <span>Garansi Kerja</span>
+                                <p>Pasti Tuntas Sesuai Kebutuhan</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </section>
+        </div>
+    </main>
+    
+    <!-- ================= BAGIAN FOOTER ================= -->
+    <footer id="footer">
+      <div id="footer-layer">
+
+         <div id="footer-logo">
+            <img src="logo.jpg" alt="Logo Footer">
+            <div class="footer-brand-text">
+                <h4>NIGHT CITY ARCHIVE</h4>
+                <p>Distopia Futuristik 2076</p>
+            </div>
+         </div>
+
+         <div id="footer-nav">
+          <h3>Quick Link</h3>
+          <div class="nav-links">
+              <a href="home.html">Home</a>
+              <a href="about.html">About</a>
+              <a href="service.html">Service</a>
+              <a href="#contact" class="contact-trigger">Contact</a>
+          </div>
+         </div>
+
+         <div id="footer-social">
+          <h3>Media Sosial</h3>
+          <ul>
+            <li>Instagram: <a href="https://instagram.com" target="_blank">@_4nto0o</a></li>
+            <li>TikTok   : <a href="https://tiktok.com" target="_blank">@_4nto0o</a></li>
+          </ul>
+         </div>
+
+      </div>
+    </footer>
+
+    <!-- Script JavaScript untuk Animasi & Interaksi Tab -->
+    <script src="script.js"></script>
+</body>
+</html>

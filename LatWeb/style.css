@@ -1,0 +1,787 @@
+/* ========================================================
+   CYBERPUNK THEME STYLESHEET
+   Didesain untuk: Tugas Web, Home, About, Service, & Contact
+   ======================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #050608;
+    color: #f7f6f6;
+    font-family: 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ================= HEADER ================= */
+#header {
+    background-image: linear-gradient(rgba(10, 12, 16, 0.65), rgba(10, 12, 16, 0.95)), url("cyberpunk-name.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 550px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid rgba(255, 213, 0, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* Header Banner Hero Text */
+.header-hero {
+    margin: auto auto 60px 40px;
+    max-width: 700px;
+    padding: 20px 30px;
+    background: rgba(10, 14, 20, 0.7);
+    border-left: 5px solid #ffd500;
+    border-radius: 4px;
+    backdrop-filter: blur(8px);
+    animation: fadeInHero 1s ease-out;
+}
+
+.header-hero .badge {
+    display: inline-block;
+    background: rgba(255, 213, 0, 0.2);
+    color: #ffd500;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid #ffd500;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.header-hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 38px;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(255, 213, 0, 0.4);
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.header-hero p {
+    color: #d1d5db;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* ================= TOPBAR & NAVBAR ================= */
+#topbar {
+    padding: 25px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+
+#logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #ffd500;
+    box-shadow: 0 0 15px rgba(255, 213, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#logo:hover {
+    transform: scale(1.08) rotate(-3deg);
+    box-shadow: 0 0 25px rgba(255, 213, 0, 0.8);
+}
+
+#logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    background: rgba(15, 18, 24, 0.85);
+    padding: 12px 28px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 213, 0, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+#navbar a {
+    text-decoration: none;
+    color: #f7f6f6;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    cursor: pointer;
+}
+
+#navbar a:hover,
+#navbar a.active {
+    color: #0a0c10;
+    background-color: #ffd500;
+    box-shadow: 0 0 15px rgba(255, 213, 0, 0.7);
+    transform: translateY(-2px);
+}
+
+#navbar span {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 18px;
+    user-select: none;
+}
+
+/* ================= CONTACT DROPDOWN CARD ================= */
+.contact-dropdown-wrapper {
+    position: relative;
+}
+
+#contact-card-dropdown {
+    position: absolute;
+    top: calc(100% + 20px);
+    right: 0;
+    width: 330px;
+    background: rgba(14, 18, 25, 0.96);
+    border: 2px solid #ffd500;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 213, 0, 0.3);
+    padding: 24px;
+    z-index: 999;
+    backdrop-filter: blur(14px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15px) scale(0.95);
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+#contact-card-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.contact-card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.contact-profile-img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 2px solid #ffd500;
+    box-shadow: 0 0 12px rgba(255, 213, 0, 0.6);
+    object-fit: cover;
+}
+
+.contact-profile-info h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 17px;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.contact-profile-info .status-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #00ff88;
+    font-weight: 600;
+}
+
+.contact-profile-info .status-tag::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: #00ff88;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00ff88;
+    animation: pulse 1.8s infinite;
+}
+
+.contact-detail-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 10px 14px;
+    transition: all 0.25s ease;
+}
+
+.contact-item:hover {
+    background: rgba(255, 213, 0, 0.12);
+    border-color: #ffd500;
+    transform: translateX(4px);
+}
+
+.contact-item span.label {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #ffd500;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.contact-item a.value,
+.contact-item span.value {
+    display: inline-block;
+    font-size: 16px;
+    color: #f7f6f6;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 3px;
+    word-break: break-word;
+}
+
+.contact-item a.value:hover {
+    color: #ffd500;
+}
+
+.contact-btn-wa {
+    display: block;
+    text-align: center;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.contact-btn-wa:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+.close-contact-btn {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    color: #aaa;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.close-contact-btn:hover {
+    color: #ff3344;
+}
+
+/* ================= MAIN BODY ================= */
+#body {
+    background-image: linear-gradient(rgba(8, 10, 14, 0.85), rgba(8, 10, 14, 0.88)), url("cyberpunk-moon.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 680px;
+    width: 93%;
+    margin: 30px auto;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 213, 0, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+}
+
+#body-layer {
+    width: 100%;
+    min-height: 680px;
+    padding: 40px 45px;
+    display: flex;
+    gap: 35px;
+}
+
+/* ==> SISI KIRI (Sidebar Navigation Tab) <== */
+#list {
+    width: 28%;
+    min-width: 260px;
+}
+
+#list .sidebar-header {
+    background: rgba(255, 213, 0, 0.1);
+    border: 1px solid rgba(255, 213, 0, 0.3);
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#list .sidebar-header h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    color: #ffd500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+#list ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#list li {
+    background: rgba(30, 36, 45, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+#list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: #ffd500;
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+#list li:hover {
+    background: rgba(207, 36, 6, 0.25);
+    border-color: rgba(255, 213, 0, 0.5);
+    transform: translateX(6px);
+}
+
+#list li:hover::before {
+    transform: scaleY(1);
+}
+
+#list li.active {
+    background: linear-gradient(90deg, rgba(255, 213, 0, 0.2), rgba(30, 36, 45, 0.85));
+    border-color: #ffd500;
+    box-shadow: 0 0 15px rgba(255, 213, 0, 0.3);
+    transform: translateX(8px);
+}
+
+#list li.active::before {
+    transform: scaleY(1);
+    width: 6px;
+    box-shadow: 0 0 10px #ffd500;
+}
+
+#list li button,
+#list li a {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #f7f6f6;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 16px 20px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#list li.active button,
+#list li.active a {
+    color: #ffd500;
+}
+
+#list li .nav-indicator {
+    font-size: 14px;
+    opacity: 0.6;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#list li:hover .nav-indicator,
+#list li.active .nav-indicator {
+    transform: translateX(4px);
+    opacity: 1;
+    color: #ffd500;
+}
+
+/* ==> SISI KANAN (Content Container & Panels) <== */
+#content {
+    flex: 1;
+    min-height: 480px;
+    background: rgba(18, 22, 30, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 30px 35px;
+    backdrop-filter: blur(8px);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Transisi Halus Tab Panel */
+.tab-panel {
+    display: none;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.tab-panel.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    animation: slideFadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.tab-panel .maintitle {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffd500;
+    font-size: 28px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 213, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 213, 0, 0.2);
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tab-panel .maintitle .section-tag {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    color: #aaa;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.tab-panel .content-intro {
+    color: #e5e7eb;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 16px 20px;
+    border-radius: 8px;
+    border-left: 4px solid #ffd500;
+}
+
+.content-body {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.content-left {
+    flex: 1.2;
+}
+
+.content-left h4 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00ffcc;
+    font-size: 16px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.content-left ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.content-left li {
+    position: relative;
+    padding-left: 24px;
+    color: #d1d5db;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.content-left li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 11px;
+    color: #ffd500;
+}
+
+.content-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card-info {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 5px solid #ffd500;
+    padding: 16px 18px;
+    border-radius: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-info:hover {
+    background: rgba(255, 213, 0, 0.1);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 213, 0, 0.4);
+}
+
+.card-info span {
+    display: block;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #ffd500;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.card-info p {
+    font-size: 16px;
+    font-weight: 600;
+    color: #f7f6f6;
+    line-height: 1.5;
+}
+
+/* ================= FOOTER ================= */
+#footer {
+    background-image: linear-gradient(rgba(10, 14, 20, 0.9), rgba(10, 14, 20, 0.95)), url("fotrr.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-top: 2px solid rgba(255, 213, 0, 0.4);
+    width: 93%;
+    margin: 20px auto 30px;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+#footer-layer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(20, 25, 35, 0.6);
+    padding: 24px 35px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    gap: 30px;
+}
+
+#footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#footer-logo img {
+    width: 75px;
+    height: 75px;
+    border-radius: 8px;
+    border: 2px solid #ffd500;
+    box-shadow: 0 0 10px rgba(255, 213, 0, 0.4);
+    object-fit: cover;
+}
+
+#footer-logo .footer-brand-text h4 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffd500;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+#footer-logo .footer-brand-text p {
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+#footer-nav {
+    text-align: center;
+}
+
+#footer-nav h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #f7f6f6;
+    font-size: 16px;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+#footer-nav .nav-links {
+    display: flex;
+    gap: 18px;
+}
+
+#footer-nav a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #d1d5db;
+    transition: all 0.3s ease;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+#footer-nav a:hover {
+    color: #ffd500;
+    background: rgba(255, 213, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+#footer-social h3 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+#footer-social ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#footer-social li {
+    color: #d1d5db;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#footer-social a {
+    color: white;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#footer-social a:hover {
+    background: #ffd500;
+    color: #050608;
+    box-shadow: 0 0 10px rgba(255, 213, 0, 0.6);
+    transform: translateX(5px);
+}
+
+/* ================= ANIMASI ================= */
+@keyframes slideFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(18px) scale(0.99);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes fadeInHero {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 8px rgba(0, 255, 136, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 255, 136, 0);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+    #topbar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+    #body-layer {
+        flex-direction: column;
+        padding: 25px 20px;
+    }
+    #list {
+        width: 100%;
+        min-width: unset;
+    }
+    #content {
+        width: 100%;
+    }
+    .content-body {
+        flex-direction: column;
+    }
+    #footer-layer {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    #footer-nav .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
